@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-pink: hsl(275, 100%, 97%);
+    --grayish-purple: hsl(292, 16%, 49%);
+    --dark-purple: hsl(292, 42%, 14%);
+
+    --text: 1rem;
+
+    --weight-sm: 400;
+    --weight-md: 600;
+    --weight-lg: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: var(--weight-sm);
+    font-family: "Work Sans", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    background: url("./assets/images/background-pattern-desktop.svg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: var(--light-pink);
+}
+
+.none { display: none; }
+.expand { display: block; }
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    max-width: 700px;
+    width: 700px;
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 2.5rem;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: var(--weight-lg);
+    color: var(--dark-purple);
+}
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    width: 100%;
+    padding: 1.5rem 0;
+}
+
+.faq:not(.faq:last-child) {
+    border-bottom: 1px solid var(--light-pink);
+}
+
+h2 {
+    font-size: 1.3rem;
+    color: var(--dark-purple);
+    font-weight: var(--weight-md);
+}
+h2:hover { color: rgb(168, 61, 211); }
+
+.content {
+    font-size: var(--text);
+    color: var(--grayish-purple);
+    line-height: 1.5;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    body {
+        background: url("./assets/images/background-pattern-mobile.svg");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-color: var(--light-pink);
+    }
+
+    .card {
+        width: auto;
+        min-width: 350px;
+        max-height: 700px;
+        padding: 1rem;
+
+        overflow-y: auto;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
